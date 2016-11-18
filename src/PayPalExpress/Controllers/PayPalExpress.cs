@@ -42,8 +42,8 @@ namespace LibCloud.Controllers
                 },
                 RedirectUrls = new RedirectUrls
                 {
-                    CancelUrl = ConfigurationProvider.GetSuccessUrl(),
-                    ReturnUrl = ConfigurationProvider.GetCancelUrl()
+                    CancelUrl = ConfigurationProvider.GetCancelUrl(),
+                    ReturnUrl = ConfigurationProvider.GetSuccessUrl()
                 }
             };
 
