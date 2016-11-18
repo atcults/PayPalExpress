@@ -15,7 +15,7 @@ namespace LibCloud.Controllers
         }
 
         [HttpGet]
-        public string Index()
+        public IActionResult Index()
         {
             _logger.LogDebug("Getting paypal approval");
 
@@ -47,7 +47,7 @@ namespace LibCloud.Controllers
 
             var approvalUrl = PayPal.RestClient.GetApprovalUrl(data);
 
-            return approvalUrl;
+            return Redirect(approvalUrl);
         }
         
     }
