@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PayPal;
 using PayPal.Model;
 
 namespace LibCloud.Controllers
@@ -14,8 +15,9 @@ namespace LibCloud.Controllers
             _logger = loggerFactory.CreateLogger("PayPalExpress");
         }
 
+        [Route("Approval")]
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Approval()
         {
             _logger.LogDebug("Getting paypal approval");
 
@@ -40,8 +42,8 @@ namespace LibCloud.Controllers
                 },
                 RedirectUrls = new RedirectUrls
                 {
-                    CancelUrl = "http://sanelib.com/api/cancel",
-                    ReturnUrl = "http://sanelib.com/api/success"
+                    CancelUrl = ConfigurationProvider.GetSuccessUrl(),
+                    ReturnUrl = ConfigurationProvider.GetCancelUrl()
                 }
             };
 

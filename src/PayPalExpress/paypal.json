@@ -10,6 +10,6 @@
     "ClientId": "",
     "ClientSecret": ""
   },
-  "SuccessUrl": "http://sanelib.com/success.html",
-  "CancelUrl": "http://sanelib.com/cancel.html"      
+  "SuccessUrl": "http://localhost:5000/api/PayPalExpress/Execute",
+  "CancelUrl": "http://localhost:5000/api/PayPalExpress/Cancel"
 }

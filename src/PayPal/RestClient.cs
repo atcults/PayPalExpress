@@ -21,10 +21,10 @@ namespace PayPal
 	    */
         private static async Task GetAccessToken()
         {
-            var serviceUrl = GetServiceUrl("v1/oauth2/token");
+            var serviceUrl = ConfigurationProvider.GetServiceUrl("v1/oauth2/token");
 
-            var clientId = GetClientId();
-            var clientSecret = GetClientSecret();
+            var clientId = ConfigurationProvider.GetClientId();
+            var clientSecret = ConfigurationProvider.GetClientSecret();
 
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(serviceUrl);
 
@@ -92,7 +92,7 @@ namespace PayPal
 
         private static async Task<string> ExecuteRequest(string url, string method, string body)
         {
-            var serviceUrl = GetServiceUrl(url);
+            var serviceUrl = ConfigurationProvider.GetServiceUrl(url);
 
             if (_tokenObtainedTime < DateTime.Now.AddMinutes(-10))
             {
@@ -137,29 +137,6 @@ namespace PayPal
             }
 
             return result;
-        }
-
-        private static string GetServiceUrl(string pathService)
-        {
-            var serviceUrl = IsSandBox() ? ConfigurationProvider.Instance["SandBox:EndPoint"] : ConfigurationProvider.Instance["Live:EndPoint"];
-            return serviceUrl + pathService;
-        }
-
-        private static string GetClientId()
-        {
-            var clientId = IsSandBox() ? ConfigurationProvider.Instance["SandBox:ClientId"] : ConfigurationProvider.Instance["Live:ClientId"];
-            return clientId;
-        }
-
-        private static string GetClientSecret()
-        {
-            var clientSecret = IsSandBox() ? ConfigurationProvider.Instance["SandBox:ClientSecret"] : ConfigurationProvider.Instance["Live:ClientSecret"];
-            return clientSecret;
-        }
-
-        private static bool IsSandBox()
-        {
-            return bool.Parse(ConfigurationProvider.Instance["UseSendBox"]);
         }
 
     }
