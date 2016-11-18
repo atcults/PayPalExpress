@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0-*",
+
+  //This will require public static void main method as entry point.
+  "buildOptions": {
+    "debugType": "portable",
+    "emitEntryPoint": true,
+    "copyToOutput": [ "paypal.json", "appsettings.json" ]
+  },
+
+  "dependencies": {
+    "Microsoft.NETCore.App": "1.1.0",
+    "Microsoft.Extensions.Logging.Console": "1.1.0",
+    "Microsoft.Extensions.Logging.Debug": "1.1.0",
+    "Microsoft.AspNetCore.StaticFiles": "1.1.0",
+    "Microsoft.AspNetCore.Diagnostics": "1.1.0",
+    "Microsoft.Extensions.Configuration.CommandLine": "1.1.0",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.1.0",
+    "Microsoft.Extensions.Configuration.FileExtensions": "1.1.0",
+    "Microsoft.AspNetCore.Mvc": "1.1.0",
+    "Microsoft.AspNetCore.Hosting": "1.1.0",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.1.0",
+    "NLog.Extensions.Logging": "1.0.0-*",
+    "PayPal": "1.0.0-*"
+  },
+  "tools": {
+  },
+  "frameworks": {
+    "netcoreapp1.0": {}
+  },
+  "runtimes": {
+    "osx.10.11-x64": {},
+    "win10-x64": {},
+    "ubuntu.14.04-x64": {}
+  },
+  "runtimeOptions": {
+    "configProperties": {
+      "System.GC.Server": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+# User-specific files
+*.db
+*.suo
+*.user
+*.cache
+*.log
+*.orig
+*.Publish.xml
+*.pubxml
+
+CommonAssemblyInfo.cs
+
+_ReSharper*
+build/
+logs/
+packages/
+bin
+obj
+patch
+.vs
+project.lock.json

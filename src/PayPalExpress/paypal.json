@@ -1,0 +1,15 @@
+﻿{
+  "UseSendBox": true,
+  "SandBox": {
+    "EndPoint": "https://api.sandbox.paypal.com/",
+    "ClientId": "Adv-ZFVK59wg57hMglYIcuEaFjrn-VJENuerZkBhFCwbO-e_RR0Xg63hfWxrD0kiJ0IiDv6FziP24RE9",
+    "ClientSecret": "EFvJm22gXzrzurNNIu7GyQHqxoM9kaUIp-kdQ921IokfOtMI_aueRYGKir-23P0L7bm-0P9dldmRhStQ"
+  },
+  "Live": {
+    "EndPoint": "https://api.paypal.com/",
+    "ClientId": "",
+    "ClientSecret": ""
+  },
+  "SuccessUrl": "http://sanelib.com/success.html",
+  "CancelUrl": "http://sanelib.com/cancel.html"      
+}
